@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page un seul article !{% endblock %}
+
+{% block body %}
+<div>
+    <h1>Hello Un seul article : #{{ article.id }}!</h1>
+    <p>titre : {{ article.title }}</p>
+    <p>{{ article.content }}</p>
+</div>
+
+<a href="{{ path('article') }}">Retour</a>
+{% endblock %}

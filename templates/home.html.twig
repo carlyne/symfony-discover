@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Home !{% endblock %}
+
+{% block body %}
+<div>
+    <h1>Hello Page Home !</h1>
+</div>
+
+<h2>trois denriers articles publiés</h2>
+
+
+{% for article in articles %}
+    <ul>
+        <li>
+            Voir 
+            <a href="{{ path('show_one', { id: article.id }) }}">
+                {{ article.title }}
+            </a>
+        </li>
+        <li> {{ article.shortContent }} </li>
+        <li> {{ article.createdAt | date("m/d/Y H:i", "Europe/Paris") }} </li>
+    </ul>
+    {% endfor %}
+{% endblock %}

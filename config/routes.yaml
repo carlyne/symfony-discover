@@ -1,0 +1,16 @@
+# accueil:
+#     path: /
+#     controller: App\Controller\HomepageController::index
+
+# article:
+#     path: /article
+#     controller: App\Controller\ArticleController::showAll
+
+# single_article:
+#     path: /article/{id}
+#     controller: App\Controller\ArticleController::showOne
+#     methods: GET | HEAD
+
+# article_write:
+#   path: /article/write
+#   controller: App\Controller\ArticleController::write

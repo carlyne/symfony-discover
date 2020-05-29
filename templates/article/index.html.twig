@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Articles !{% endblock %}
+
+{% block body %}
+<div>
+    <h1>Hello Tous les articles !</h1>
+
+    {% for article in articles %}
+    <ul>
+        <li>
+            Voir 
+            <a href="{{ path('show_one', { id: article.id }) }}">
+                {{ article.title }}
+            </a>
+        </li>
+        <li> {{ article.shortContent }} </li>
+        <li> {{ article.createdAt | date("m/d/Y H:i", "Europe/Paris") }} </li>
+        <li> <a href="{{ path('article_update', { article: article.id }) }}">Editer un article</a> </li>
+        <li> <form action="{{ path('article_delete', { article: article.id }) }}" method="POST"><input type="submit" value="supprimer"></form> </li>
+    </ul>
+    {% endfor %}
+</div>
+
+<a href="{{ path('article_create') }}">Créer article</a>
+{% endblock %}

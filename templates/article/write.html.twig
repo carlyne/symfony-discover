@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Création d'articles !{% endblock %}
+
+{% block body %}
+<div>
+	<h1>Hello formulaire de création !</h1>
+
+
+	{{ form_start(form) }}
+		{{ form_widget(form) }}
+		<button>Créer</button>
+	{{ form_end(form) }}
+
+
+
+
+	{# {% if article is defined %}
+	<form action="{{ path('article_update', {article: article.id} )}}" method="POST">
+	{% else %}
+	<form action="{{ path('article_create') }}" method="POST">
+	{% endif %}
+
+		<div>
+			<label for="title">Title</label>
+			<input type="text" name="title" id="title" value="{{ article.title | default("") }}">
+		</div>
+
+		<div>
+			<label for="content">Content</label>
+			<input type="text" name="content" id="content" value="{{ article.content | default("") }}">
+		</div>
+
+		<input type="submit">
+
+	</form> #}
+
+
+</div>
+{% endblock %}
